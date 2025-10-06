@@ -9,7 +9,6 @@ import java.time.LocalDateTime;
 
 public class Employee implements Serializable {
 
-    private static final long serialVersionUID = 1L;
 
     private Long id;
 
@@ -39,7 +38,23 @@ public class Employee implements Serializable {
     @TableField(fill = FieldFill.INSERT_UPDATE)
     private Long updateUser;
 
+    public Employee() {
+    }
 
+    public Employee(Long id, String username, String name, String password, String phone, String sex, String idNumber, Integer status, LocalDateTime createTime, LocalDateTime updateTime, Long createUser, Long updateUser) {
+        this.id = id;
+        this.username = username;
+        this.name = name;
+        this.password = password;
+        this.phone = phone;
+        this.sex = sex;
+        this.idNumber = idNumber;
+        this.status = status;
+        this.createTime = createTime;
+        this.updateTime = updateTime;
+        this.createUser = createUser;
+        this.updateUser = updateUser;
+    }
 
 
     /**
@@ -235,6 +250,6 @@ public class Employee implements Serializable {
     }
 
     public String toString() {
-        return "Employee{serialVersionUID = " + serialVersionUID + ", id = " + id + ", username = " + username + ", name = " + name + ", password = " + password + ", phone = " + phone + ", sex = " + sex + ", idNumber = " + idNumber + ", status = " + status + ", createTime = " + createTime + ", updateTime = " + updateTime + ", createUser = " + createUser + ", updateUser = " + updateUser + "}";
+        return "Employee{serialVersionUID = "  +", id = " + id + ", username = " + username + ", name = " + name + ", password = " + password + ", phone = " + phone + ", sex = " + sex + ", idNumber = " + idNumber + ", status = " + status + ", createTime = " + createTime + ", updateTime = " + updateTime + ", createUser = " + createUser + ", updateUser = " + updateUser + "}";
     }
 }

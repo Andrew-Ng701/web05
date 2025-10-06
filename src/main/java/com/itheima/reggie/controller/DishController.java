@@ -35,7 +35,6 @@ public class DishController {
 
     @PostMapping
     public R<String> save(@RequestBody DishDto dishDto){
-        log.info(dishDto.toString());
         dishService.saveWithFlavor(dishDto);
         return R.success("success");
     }
@@ -75,7 +74,6 @@ public class DishController {
 
     @PutMapping
     public R<String> update(@RequestBody DishDto dishDto){
-        log.info(dishDto.toString());
         dishService.updateWithFlavor(dishDto);
         return R.success("success");
     }

@@ -30,7 +30,6 @@ public class UserController {
         String phone = user.getPhone();
         if(StringUtils.isNotEmpty(phone)){
             String code = ValidateCodeUtils.generateValidateCode(4).toString();
-            log.info("code = "+ code);
 //            SMSUtils.sendMessage("code","",phone,code);
             session.setAttribute(phone,code);
             return R.success("success");
@@ -48,7 +47,6 @@ public class UserController {
         Object codeObj = session.getAttribute("userPhone");
         String codeInSession = codeObj == null ? null : codeObj.toString();
 
-        log.info("Login try: phone={}, sessionId={}, codeInSession={}", phone, session.getId(), codeInSession);
 
 //        if (codeInSession != null && codeInSession.equals(code)) {
         LambdaQueryWrapper<User> qw = new LambdaQueryWrapper<>();

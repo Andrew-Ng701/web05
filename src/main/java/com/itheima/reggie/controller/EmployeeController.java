@@ -74,7 +74,6 @@ public class EmployeeController {
     public R<String> update(HttpServletRequest request,@RequestBody Employee employee){
         Long empId = (Long) request.getSession().getAttribute("employee");
         long id = Thread.currentThread().getId();
-        log.info(id + "...");
 //        employee.setUpdateTime(LocalDateTime.now());
 //        employee.setUpdateUser(empId);
         employeeService.updateById(employee);
